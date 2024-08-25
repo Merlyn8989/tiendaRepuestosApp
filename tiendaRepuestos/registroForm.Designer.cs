@@ -107,14 +107,14 @@
             // 
             // registrarseButton
             // 
-            registrarseButton.Location = new Point(183, 340);
+            registrarseButton.Location = new Point(201, 340);
             registrarseButton.Name = "registrarseButton";
             registrarseButton.Size = new Size(94, 29);
             registrarseButton.TabIndex = 8;
             registrarseButton.Text = "Registrarse";
             registrarseButton.UseVisualStyleBackColor = true;
             // 
-            // registroUsuario
+            // registroForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -128,7 +128,7 @@
             Controls.Add(nombreLabel);
             Controls.Add(tituloRegistroLabel);
             Controls.Add(tituloLabel);
-            Name = "registroUsuario";
+            Name = "registroForm";
             Text = "registroUsuario";
             ResumeLayout(false);
             PerformLayout();
