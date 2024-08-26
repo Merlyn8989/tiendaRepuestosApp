@@ -21,12 +21,11 @@ namespace tiendaRepuestos
             this.producto3 = producto3;
 
             eleccionProductoComboBox.Text = "Elige una opción";
-
             eleccionProductoComboBox.Items.Add(producto1.Nombre);
             eleccionProductoComboBox.Items.Add(producto2.Nombre);
             eleccionProductoComboBox.Items.Add(producto3.Nombre);
-
         }
+
         private void Notificador_ProductoAgotado(object sender, Producto producto)
         {
             MessageBox.Show($"El producto {producto.Nombre} está agotado.");
@@ -37,32 +36,44 @@ namespace tiendaRepuestos
             try
             {
                 string seleccion = eleccionProductoComboBox.Text;
-                int cantidad = int.Parse(cantidadCompraTextBox.Text);
-
                 if (string.IsNullOrWhiteSpace(seleccion))
                 {
                     MessageBox.Show("Por favor, seleccione un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                if (!int.TryParse(cantidadCompraTextBox.Text, out int cantidad) || cantidad <= 0)
+                {
+                    MessageBox.Show("Por favor, ingrese una cantidad válida mayor a cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Producto productoSeleccionado = null;
 
                 if (seleccion == producto1.Nombre)
                 {
-                    MessageBox.Show(producto1.Recibo(cantidad));
-                    
+                    productoSeleccionado = producto1;
                 }
                 else if (seleccion == producto2.Nombre)
                 {
-                    MessageBox.Show(producto2.Recibo(cantidad));
+                    productoSeleccionado = producto2;
                 }
-                else if(seleccion == producto3.Nombre)
+                else if (seleccion == producto3.Nombre)
                 {
-                    MessageBox.Show(producto3.Recibo(cantidad));
+                    productoSeleccionado = producto3;
                 }
                 else
                 {
                     MessageBox.Show("Producto no disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                if (productoSeleccionado == null)
+                {
+                    MessageBox.Show("El producto seleccionado no está disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
             }
             catch (Exception ex)
             {
@@ -71,3 +82,4 @@ namespace tiendaRepuestos
         }
     }
 }
+
