@@ -45,12 +45,12 @@ namespace ClasesTienda.Modelo
         {
             if (this.CantidadEnInventario > 0 && this.CantidadEnInventario >= cantidadComprada) {
 
-                double total = PrecioTotal(cantidadComprada);
+                double total = Math.Round(PrecioTotal(cantidadComprada), 2);
 
-                return $"Su total a pagar es de: {total} {this.CantidadEnInventario}";
+                return $"Su total a pagar es de: {total}";
             }
             else{
-                return $"No hay cantidad suficiente para realizar la compra {this.CantidadEnInventario}";
+                return "No hay cantidad suficiente para realizar la compra";
             }
                 
         }

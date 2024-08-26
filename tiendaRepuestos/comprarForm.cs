@@ -74,6 +74,7 @@ namespace tiendaRepuestos
                     return;
                 }
 
+                MessageBox.Show(productoSeleccionado.Recibo(cantidad));
             }
             catch (Exception ex)
             {
@@ -82,4 +83,3 @@ namespace tiendaRepuestos
         }
     }
 }
-

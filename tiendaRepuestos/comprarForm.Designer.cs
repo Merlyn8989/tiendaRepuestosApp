@@ -31,7 +31,6 @@
             eleccionProductoComboBox = new ComboBox();
             cantidadCompraTextBox = new TextBox();
             pagarButton = new Button();
-            cancelarButton = new Button();
             productoCompraLabel = new Label();
             cantidadCompraLabel = new Label();
             SuspendLayout();
@@ -53,22 +52,13 @@
             // 
             // pagarButton
             // 
-            pagarButton.Location = new Point(62, 212);
+            pagarButton.Location = new Point(125, 207);
             pagarButton.Name = "pagarButton";
             pagarButton.Size = new Size(94, 29);
             pagarButton.TabIndex = 2;
             pagarButton.Text = "Pagar";
             pagarButton.UseVisualStyleBackColor = true;
             pagarButton.Click += pagarButton_Click;
-            // 
-            // cancelarButton
-            // 
-            cancelarButton.Location = new Point(211, 212);
-            cancelarButton.Name = "cancelarButton";
-            cancelarButton.Size = new Size(94, 29);
-            cancelarButton.TabIndex = 3;
-            cancelarButton.Text = "Cancelar";
-            cancelarButton.UseVisualStyleBackColor = true;
             // 
             // productoCompraLabel
             // 
@@ -92,10 +82,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 300);
+            ClientSize = new Size(411, 300);
             Controls.Add(cantidadCompraLabel);
             Controls.Add(productoCompraLabel);
-            Controls.Add(cancelarButton);
             Controls.Add(pagarButton);
             Controls.Add(cantidadCompraTextBox);
             Controls.Add(eleccionProductoComboBox);
@@ -110,7 +99,6 @@
         private ComboBox eleccionProductoComboBox;
         private TextBox cantidadCompraTextBox;
         private Button pagarButton;
-        private Button cancelarButton;
         private Label productoCompraLabel;
         private Label cantidadCompraLabel;
     }
