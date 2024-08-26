@@ -42,18 +42,20 @@
             // tituloLabel
             // 
             tituloLabel.AutoSize = true;
-            tituloLabel.Location = new Point(149, 38);
+            tituloLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tituloLabel.Location = new Point(150, 45);
             tituloLabel.Name = "tituloLabel";
-            tituloLabel.Size = new Size(181, 20);
+            tituloLabel.Size = new Size(189, 25);
             tituloLabel.TabIndex = 0;
-            tituloLabel.Text = "Tienda de Repuestos Rajo";
+            tituloLabel.Text = "Tienda de Repuestos";
             // 
             // tituloRegistroLabel
             // 
             tituloRegistroLabel.AutoSize = true;
-            tituloRegistroLabel.Location = new Point(135, 92);
+            tituloRegistroLabel.Font = new Font("Segoe UI Light", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tituloRegistroLabel.Location = new Point(150, 92);
             tituloRegistroLabel.Name = "tituloRegistroLabel";
-            tituloRegistroLabel.Size = new Size(224, 20);
+            tituloRegistroLabel.Size = new Size(186, 17);
             tituloRegistroLabel.TabIndex = 1;
             tituloRegistroLabel.Text = "Regístrese para hacer su compra";
             // 
@@ -102,12 +104,12 @@
             // 
             dateTimePicker1.Location = new Point(214, 276);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.Size = new Size(271, 27);
             dateTimePicker1.TabIndex = 7;
             // 
             // registrarseButton
             // 
-            registrarseButton.Location = new Point(201, 340);
+            registrarseButton.Location = new Point(189, 343);
             registrarseButton.Name = "registrarseButton";
             registrarseButton.Size = new Size(94, 29);
             registrarseButton.TabIndex = 8;
