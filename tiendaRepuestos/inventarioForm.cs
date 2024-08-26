@@ -16,9 +16,9 @@ namespace tiendaRepuestos
         public inventarioForm()
         {
             InitializeComponent();
-            Producto producto1 = new Producto("Bujillas", 50, 19.99);
-            Producto producto2 = new Producto("Frenos", 30, 29.99);
-            Producto producto3 = new Producto("Aceite", 20, 9.99);
+            producto1 = new Producto("Bujillas", 50, 19.99);
+            producto2 = new Producto("Frenos", 30, 29.99);
+            producto3 = new Producto("Aceite", 20, 9.99);
 
             producto1Label.Text = producto1.MostrarDetalles();
             producto2Label.Text = producto2.MostrarDetalles();
@@ -26,4 +26,3 @@ namespace tiendaRepuestos
 
         }
     }
-}
