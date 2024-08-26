@@ -35,7 +35,7 @@
             apellidoTextBox = new TextBox();
             apellidoLabel = new Label();
             fechaNacimientolabel = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            nacimientoDateTimePicker = new DateTimePicker();
             registrarseButton = new Button();
             SuspendLayout();
             // 
@@ -100,12 +100,12 @@
             fechaNacimientolabel.TabIndex = 6;
             fechaNacimientolabel.Text = "Fecha de nacimiento:";
             // 
-            // dateTimePicker1
+            // nacimientoDateTimePicker
             // 
-            dateTimePicker1.Location = new Point(214, 276);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(271, 27);
-            dateTimePicker1.TabIndex = 7;
+            nacimientoDateTimePicker.Location = new Point(214, 276);
+            nacimientoDateTimePicker.Name = "nacimientoDateTimePicker";
+            nacimientoDateTimePicker.Size = new Size(271, 27);
+            nacimientoDateTimePicker.TabIndex = 7;
             // 
             // registrarseButton
             // 
@@ -115,6 +115,7 @@
             registrarseButton.TabIndex = 8;
             registrarseButton.Text = "Registrarse";
             registrarseButton.UseVisualStyleBackColor = true;
+            registrarseButton.Click += registrarseButton_Click;
             // 
             // registroForm
             // 
@@ -122,7 +123,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(521, 410);
             Controls.Add(registrarseButton);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(nacimientoDateTimePicker);
             Controls.Add(fechaNacimientolabel);
             Controls.Add(apellidoTextBox);
             Controls.Add(apellidoLabel);
@@ -145,7 +146,7 @@
         private TextBox apellidoTextBox;
         private Label apellidoLabel;
         private Label fechaNacimientolabel;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker nacimientoDateTimePicker;
         private Button registrarseButton;
     }
 }
