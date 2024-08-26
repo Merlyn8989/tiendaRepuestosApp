@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ClasesTienda.EventosPersonalizados;
 using ClasesTienda.Modelo;
-using ClasesTienda.EventosPersonalizados;
 
 namespace tiendaRepuestos
 {
@@ -17,6 +8,7 @@ namespace tiendaRepuestos
         private Producto producto1;
         private Producto producto2;
         private Producto producto3;
+        private NotificadorProductoAgotado notificador;
 
         public comprarForm(Producto producto1, Producto producto2, Producto producto3)
         {
@@ -42,7 +34,40 @@ namespace tiendaRepuestos
 
         private void pagarButton_Click(object sender, EventArgs e)
         {
-       
+            try
+            {
+                string seleccion = eleccionProductoComboBox.Text;
+                int cantidad = int.Parse(cantidadCompraTextBox.Text);
+
+                if (string.IsNullOrWhiteSpace(seleccion))
+                {
+                    MessageBox.Show("Por favor, seleccione un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                if (seleccion == producto1.Nombre)
+                {
+                    MessageBox.Show(producto1.Recibo(cantidad));
+                    
+                }
+                else if (seleccion == producto2.Nombre)
+                {
+                    MessageBox.Show(producto2.Recibo(cantidad));
+                }
+                else if(seleccion == producto3.Nombre)
+                {
+                    MessageBox.Show(producto3.Recibo(cantidad));
+                }
+                else
+                {
+                    MessageBox.Show("Producto no disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
-}
 }

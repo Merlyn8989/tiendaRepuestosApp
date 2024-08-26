@@ -59,6 +59,7 @@
             pagarButton.TabIndex = 2;
             pagarButton.Text = "Pagar";
             pagarButton.UseVisualStyleBackColor = true;
+            pagarButton.Click += pagarButton_Click;
             // 
             // cancelarButton
             // 

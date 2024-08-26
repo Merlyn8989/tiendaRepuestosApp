@@ -13,6 +13,10 @@ namespace tiendaRepuestos
 {
     public partial class inventarioForm : Form
     {
+        private Producto producto1;
+        private Producto producto2;
+        private Producto producto3;
+
         public inventarioForm()
         {
             InitializeComponent();
@@ -23,6 +27,13 @@ namespace tiendaRepuestos
             producto1Label.Text = producto1.MostrarDetalles();
             producto2Label.Text = producto2.MostrarDetalles();
             producto3Label.Text = producto3.MostrarDetalles();
+        }
 
+        private void comprarButton_Click(object sender, EventArgs e)
+        {
+
+            var formularioCompra = new comprarForm(producto1, producto2, producto3);
+            formularioCompra.Show();
         }
     }
+}

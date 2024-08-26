@@ -24,5 +24,35 @@ namespace ClasesTienda.Modelo
         {
             return $"     {this.Nombre}                       |      {this.CantidadEnInventario}                 |        {this.Precio:C}";
         }
+
+        public double PrecioTotal(int cantidadComprada)
+        {
+            if(this.CantidadEnInventario > 0 && this.CantidadEnInventario >= cantidadComprada)
+            {
+                double cantidadTotal = cantidadComprada * this.Precio;
+                this.CantidadEnInventario -= cantidadComprada;
+
+                return cantidadTotal;
+            }
+            else
+            {
+                return 0;
+            }
+            
+        }
+
+        public string Recibo(int cantidadComprada)
+        {
+            if (this.CantidadEnInventario > 0 && this.CantidadEnInventario >= cantidadComprada) {
+
+                double total = PrecioTotal(cantidadComprada);
+
+                return $"Su total a pagar es de: {total} {this.CantidadEnInventario}";
+            }
+            else{
+                return $"No hay cantidad suficiente para realizar la compra {this.CantidadEnInventario}";
+            }
+                
+        }
     }
 }

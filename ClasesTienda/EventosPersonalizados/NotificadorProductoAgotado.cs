@@ -7,7 +7,7 @@ using ClasesTienda.Modelo;
 
 namespace ClasesTienda.EventosPersonalizados
 {
-    internal class NotificadorProductoAgotado
+    public class NotificadorProductoAgotado
     {
         public event EventHandler<Producto> ProductoAgotado;
         protected virtual void OnProductoAgotado(Producto producto)

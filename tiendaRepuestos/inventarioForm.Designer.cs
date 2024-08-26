@@ -32,6 +32,7 @@
             encabezadoLabel = new Label();
             producto2Label = new Label();
             producto3Label = new Label();
+            comprarButton = new Button();
             SuspendLayout();
             // 
             // producto1Label
@@ -71,11 +72,22 @@
             producto3Label.TabIndex = 3;
             producto3Label.Text = "Producto 3";
             // 
+            // comprarButton
+            // 
+            comprarButton.Location = new Point(213, 303);
+            comprarButton.Name = "comprarButton";
+            comprarButton.Size = new Size(94, 29);
+            comprarButton.TabIndex = 4;
+            comprarButton.Text = "Comprar";
+            comprarButton.UseVisualStyleBackColor = true;
+            comprarButton.Click += comprarButton_Click;
+            // 
             // inventarioForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(546, 409);
+            Controls.Add(comprarButton);
             Controls.Add(producto3Label);
             Controls.Add(producto2Label);
             Controls.Add(encabezadoLabel);
@@ -92,5 +104,6 @@
         private Label encabezadoLabel;
         private Label producto2Label;
         private Label producto3Label;
+        private Button comprarButton;
     }
 }
